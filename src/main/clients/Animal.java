@@ -1,18 +1,27 @@
-package main;
+package main.clients;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Animal {
-    private String nickName;
-    private Owner owner;
-    private LocalDate birthDate;
-    private Illness illness;
+    protected String nickName;
+    protected Owner owner;
+    protected LocalDate birthDate;
+    protected Illness illness;
+//    protected String legs;
+//    protected String wings;
+//    protected String fins;
 
-    public Animal(String nickName, Owner owner, LocalDate birthDate, Illness illness) {
+    public Animal(String nickName, Owner owner, LocalDate birthDate,
+                  Illness illness) {
         this.nickName = nickName;
         this.owner = owner;
         this.birthDate = birthDate;
         this.illness = illness;
+//        this.legs = legs;
+//        this.wings = wings;
+//        this.fins = fins;
+
     }
 
     public Animal() {
@@ -67,6 +76,19 @@ public class Animal {
     private void sleep(){
         System.out.println("Животное уснуло");
     }
+
+    public void toGo(){
+        System.out.println(getType() + " бегает");
+    }
+
+    public void fly(){
+        System.out.println(getType() + " летает");
+    }
+
+    public void swim(){
+            System.out.println(getType() + " плавает");
+    }
+
     public String getType(){
         return getClass().getSimpleName();
     }
